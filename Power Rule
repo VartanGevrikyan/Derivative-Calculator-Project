@@ -19,6 +19,6 @@ if (a==0) {
    std::cout<<a;
 }
  else if (a!=0 && b!=0) {
-    std::cout << (a*b) << "x" << (b-1);
+    std::cout << (a*b) << "x^" << (b-1);
 }
 }
