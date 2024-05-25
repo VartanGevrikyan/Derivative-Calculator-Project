@@ -1,0 +1,24 @@
+#include <iostream>
+
+int main() {
+double a; 
+double b;
+
+std::cout << "Enter coefficient of function.\n";
+std::cin>>a;
+std::cout << "Enter power of function.\n";
+std::cout << " x^ ";
+std::cin >> b;
+
+std::cout << "The derivative of the function is:\n";
+
+if (a==0) {
+    std::cout<<"Derivative is 0";
+}
+ else if (a!=0 && b==0) {
+   std::cout<<a;
+}
+ else if (a!=0 && b!=0) {
+    std::cout << (a*b) << "x" << (b-1);
+}
+}
