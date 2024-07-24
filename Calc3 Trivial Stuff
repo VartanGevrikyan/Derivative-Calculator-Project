@@ -1,0 +1,54 @@
+def main():
+    
+    i1 = int(input("Enter i1: "))
+    j1 = int(input("Enter j1: "))
+    k1 = int(input("Enter k1: "))
+    i2 = int(input("Enter i2: "))
+    j2 = int(input("Enter j2: "))
+    k2 = int(input("Enter k2: "))
+    
+    vector1 = [i1,j1,k1]
+    vector2 = [i2,j2,k2]    
+    
+    dotproduct = ((i1 * i2) + (j1 * j2) + (k1 * k2))
+    crossproduct = []
+    
+    crossproduct.append((j1 * k2) - (k1 * j2))
+    crossproduct.append(((i1 * k2) - (k1 * i2)) * (-1))
+    crossproduct.append((i1 * j2) - (j1 * i2))
+    
+    import math
+    exactNorm1 = math.sqrt((i1 ** 2) + (j1 ** 2) + (k1 ** 2))
+    exactNorm2 = math.sqrt((i2 ** 2) + (j2 ** 2) + (k2 ** 2))
+    
+    print("\n")
+    print("The norm for", vector1, "= sqrt(" + str((i1 ** 2) + (j1 ** 2) + (k1 ** 2)) + ")")
+    print("The norm for", vector2, "= sqrt(" + str((i2 ** 2) + (j2 ** 2) + (k2 ** 2)) + ")")
+    print("\n")
+    
+    print("Dot Product of", vector1, "&", vector2, "=", dotproduct)
+    print("Cross Product of", vector1, "&", vector2, "=", crossproduct)
+    print("\n")
+    
+    angleBetween = math.acos(dotproduct / (exactNorm1 * exactNorm2))
+    
+    print("Angle between vectors =", ((angleBetween * 180) / math.pi))
+    print("\n")
+
+    #scalar projection
+    print("Scalar Projection of B onto A:", str(dotproduct) + "/sqrt(" + str((i1 ** 2) + (j1 ** 2) + (k1 ** 2)) + ")")
+    
+    projab = []
+    
+    projab.append(str(dotproduct * i1) + "/" + str((i1 ** 2) + (j1 ** 2) + (k1 ** 2)))
+    projab.append(str(dotproduct * j1) + "/" + str((i1 ** 2) + (j1 ** 2) + (k1 ** 2)))
+    projab.append(str(dotproduct * k1) + "/" + str((i1 ** 2) + (j1 ** 2) + (k1 ** 2)))
+# add a way to simplify the fractions
+    ## stop
+
+    print("Vector Projection of B onto A:", projab)
+
+
+
+
+main()
